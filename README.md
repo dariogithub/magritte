@@ -14,6 +14,18 @@ Magritte is a fully dynamic meta-description framework that helps to solve those
 
 Christoph Lamprecht ported Magritte to [Perl](http://sites.google.com/site/vlclamprecht/Home/perl).
 
+### Add as a project dependency
+
+In you project Baseline or Configuration definition, add to the spec:
+
+```
+baseline: 'Magritte' 
+with: [ spec repository: 'github://magritte-metamodel/magritte:v3.5.4'; 
+             loads: #(Core) ]; 
+```
+
+This snippet uses V3.5.4 release version, remember to change the release version to your needs. See BaselineOfMagritte for other groups to load beside of 'Core'.
+
 ### Mailing-Lists
   * [Magritte, Pier and Related Tools](https://www.iam.unibe.ch/mailman/listinfo/smallwiki)
   * [Seaside](http://lists.squeakfoundation.org/cgi-bin/mailman/listinfo/seaside)
@@ -29,6 +41,6 @@ Christoph Lamprecht ported Magritte to [Perl](http://sites.google.com/site/vlcla
   * Ongoing work: [Meta data at Work with Magritte: A Tutorial](https://github.com/SquareBracketAssociates/Magritte) [pdf version](https://ci.inria.fr/pharo-contribution/view/Books/job/Magritte/lastSuccessfulBuild/artifact/book-result/MagritteBooklet.pdf)
   
 ### Papers
-  * [Magritte – Meta-Described Web Application Development](http://www.iam.unibe.ch/~scg/Archive/Diploma/Reng06a.pdf)
-  * [Magritte – A Meta-Driven Approach to Empower Developers and End Users](http://www.iam.unibe.ch/~scg/Archive/Papers/Reng07aMagritte.pdf)
+  * [Magritte – Meta-Described Web Application Development](http://sdmeta.gforge.inria.fr/Teaching/Lille/0910-MetaModelisation/Magritte/Reng06a.pdf)
+  * [Magritte – A Meta-Driven Approach to Empower Developers and End Users](http://scg.unibe.ch/archive/papers/Reng07aMagritte.pdf)
   

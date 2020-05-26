@@ -29,7 +29,7 @@ baseline330ForPharo: spec
 				" create a temporary alias "
 				package: 'Magritte-Pharo-Model' with: 'Magritte-Pharo3-Model'].
 	spec
-		for: #(#'pharo7.x')
+		for: #(#'pharo7.x' #'pharo8.x' #'pharo9.x')
 		do: [ 
 			spec
 				package: 'Magritte-Pharo7-Model' with: [ spec requires: #('Magritte-Model') ];
@@ -51,11 +51,16 @@ baseline330ForPharo: spec
 			spec package: 'Magritte-Morph' with: [ spec includes: #('Magritte-GT') ].
 			spec group: 'default' with: #('Magritte-GT') ].
 	spec
-		for: #(#'pharo5.x' #'pharo6.x' #'pharo7.x')
+		for: #(#'pharo5.x' #'pharo6.x' #'pharo7.x' #'pharo8.x' #'pharo9.x')
 		do: [ 
-			spec package: 'Glamour-Magritte-Presentations' with: [ spec repository: 'http://www.smalltalkhub.com/mc/Moose/Glamour/main' ].
-			spec package: 'Magritte-GT' with: [ spec requires: #('Morphic' 'Glamour-Magritte-Presentations') ].
-			spec group: 'default' with: #('Magritte-GT') ].
+			spec
+				baseline: 'PharoEnhancements' with: [
+					spec repository: 'github://seandenigris/Pharo-Enhancements' ].
+			spec 
+				package: 'Magritte-Glamour';
+				package: 'Magritte-GT' with: [ spec requires: #('Morphic' 'Magritte-Glamour') ];
+				package: 'Magritte-Developer' with: [ spec requires: #('PharoEnhancements') ].
+			spec group: 'default' with: #('Magritte-GT' 'Magritte-Developer') ].
 	spec
 		for: #squeakCommon
 		do: [ 
@@ -68,4 +73,4 @@ baseline330ForPharo: spec
 			spec
 				group: 'Tools' with: #('Magritte-Pharo-Tools');
 				group: 'Morphic' with: #('Magritte-Morph');
-				group: 'default' with: 'Morphic' ] 
+				group: 'default' with: 'Morphic' ]
